@@ -1,0 +1,23 @@
+.header{
+    padding-bottom: 22px;
+    margin-bottom: 36px; 
+    border-bottom: .05rem solid #6131F1;   
+}
+.main{
+    background-color:#B2F6C2;
+}
+
+.sidebar-module{
+    padding:16px;
+    background-color:#f5f5f5;
+    border-radius:10px; 
+}
+.footer{
+    padding:45px;
+    margin-top:20px;
+    color: #999;
+    text-align: center;
+    background-color: #f9f9f9;
+    border-top: .05rem solid #E53434;
+    height: 200px;
+}
