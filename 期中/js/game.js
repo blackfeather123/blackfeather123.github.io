@@ -29,7 +29,11 @@ function crow() {
         con.appendChild(row); //刚开始添加一行       将class为row的div添加到id为container的div中
     }
     else {
+<<<<<<< HEAD
         con.insertBefore(row, con.firstChild);     //以后从下往上添加行
+=======
+        con.insertBefore(row, con.firstChild);         //以后从上往下添加行
+>>>>>>> origin/master
     }
 }
 /*
@@ -67,12 +71,21 @@ function judge(ev)//判断输赢，加分
         return;
     }
     if (ev.target.className.indexOf('black') == -1) {         //indexOf返回一个字符串指定的值中第一次出现的位置
+<<<<<<< HEAD
         fail();                                               //点击到白块游戏结束
     }
     else {
         ev.target.className = 'cell';         //点击的为白块
         ev.target.parentNode.pass = 1;       //parentNode为返回指定节点的父节点（一个将指定度元素包含进去的元素）作为一个Node对象，  http://www.w3schools.com/jsref/prop_node_parentnode.asp
         score();                             //设置点击黑块得分
+=======
+        fail();                                           
+    }
+    else {
+        ev.target.className = 'cell';
+        ev.target.parentNode.pass = 1;       //parentNode为返回指定节点的父节点（一个将指定度元素包含进去的元素）作为一个Node对象  http://www.w3schools.com/jsref/prop_node_parentnode.asp
+        score();
+>>>>>>> origin/master
     }
 }
 /*
@@ -80,6 +93,7 @@ function judge(ev)//判断输赢，加分
 */
 function move() {
     var con = $('container');
+<<<<<<< HEAD
     var top = parseInt(window.getComputedStyle(con, null)['top']);   //window.getComputedStyle为获取指定元素的style内容，则得到top的值  http://www.w3schools.com/jsref/jsref_getcomputedstyle.asp
     if (speed + top > 0)
     { top = 0; }           //top走过头，直接top=0
@@ -95,6 +109,23 @@ function move() {
     }
    else  if (top == (-100 + speed)) {
         var rows = con.childNodes;     //childNodes获取con的子节点的集合
+=======
+    var top = parseInt(window.getComputedStyle(con, null)['top']);   //window.getComputedStyle为获取指定元素的style内容  http://www.w3schools.com/jsref/jsref_getcomputedstyle.asp
+    if (speed + top > 0)
+    { top = 0; } //top走过头，直接top=0
+    else {
+        top += speed;                 //调节每次下降的像素 黑块按速度下降
+    }
+    con.style.top = top + 'px';       //设置id为container的div的style为top:top(top为宜变化数字）px
+
+    if (top == 0) {
+        crow();
+        con.style.top = '-100px';      //设置con的style为top: -100px
+        drow();
+    }
+    else if (top == (-100 + speed)) {
+        var rows = con.childNodes;
+>>>>>>> origin/master
         if ((rows.length == 5) && (rows[rows.length - 1].pass !== 1)) {
             fail();          //黑块降到底游戏结束
         }
@@ -138,6 +169,7 @@ function score() {            //innerHTML为读取或元素的HTML内容        
 */
 function jiasu() {
     speed += 2;
+<<<<<<< HEAD
      if (speed == 20)            //速度到20时显示达到最大速度
     { alert('已至最大速度'); }
 }
@@ -146,10 +178,24 @@ function playgame(){
     state = 0;                 
     speed = 2;                 
       start();            //开始运行程序
+=======
+     if (speed == 20)
+    { alert('已至最大速度'); }
+}
+function playgame(){
+    $('score').innerHTML = 0;
+    state = 0;
+    speed = 2;
+      start();         //开始运行程序
+>>>>>>> origin/master
 }
 
 
     
 
 init();     //产生row
+<<<<<<< HEAD
 
+=======
+    //开始运行程序
+>>>>>>> origin/master
