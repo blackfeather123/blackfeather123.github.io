@@ -2,15 +2,12 @@ var clock = null; //定时器操作句柄
 var state = 0; //0初始化，1进行中，2暂停，3失败
 var speed = 2; //初始化方块下落速度
 
-//http://www.w3schools.com/jsref/dom_obj_document.asp    语法网址
-//https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference
-
 /*
 创建div,className是其类名
 */
 function cdiv(className) {
     var div = document.createElement('div');   //设div为产生一个指定的html元素div                 
-    div.className = className;                 //设置新产生的div的class为“className”  http://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_element_classname
+    div.className = className;                 //设置新产生的div的class为“className”  
     return div;
 }
 /*
