@@ -13,8 +13,8 @@ var e = svg.append('ellipse');
 var cx = 300;
 var cy = 300;
 c.attr('cx',cx).attr('cy',cy).attr('r',120).attr('stroke','black').attr('stroke-width',3).attr('fill','#ffffff');
-l1.attr('x1',cx).attr('y1',cy).attr('x2',cx).attr('y2',cy-100).attr('stroke-width',2).attr('stroke','rgb(255,0,0)');
-l2.attr('x1',cx).attr('y1',cy).attr('x2',cx+60).attr('y2',cy).attr('stroke-width',5).attr('stroke','rgb(255,0,0)');
+l1.attr('x1',cx).attr('y1',cy).attr('x2',cx).attr('y2',cy-100).attr('stroke-width',2).attr('stroke','rgb(255,0,0)').attr('id',1);
+l2.attr('x1',cx).attr('y1',cy).attr('x2',cx+60).attr('y2',cy).attr('stroke-width',5).attr('stroke','rgb(255,0,0)').attr('id',2);
 p.attr('points','300,180 320,140 280,140').attr('fill','lime').attr('stroke-width',1).attr('stroke','purple');
 e.attr('cx',445).attr('cy',cy).attr('rx',24).attr('ry',35).attr('fill','yellow').attr('stroke-width',2).attr('stroke','purple');
 
@@ -33,4 +33,12 @@ function six(){
 function nine(){
     l2.attr('x1',cx).attr('y1',cy).attr('x2',cx-60).attr('y2',cy);
 
+}
+function hide(){
+    $('#1').hide();
+    $('#2').hide();
+}
+function show(){
+    $('#1').show();
+    $('#2').show();
 }
